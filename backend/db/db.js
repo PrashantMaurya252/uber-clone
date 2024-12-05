@@ -1,6 +1,6 @@
 import mongoose from "mongoose";
 
-async function connectToDb(){
+export async function connectToDb(){
     try {
         mongoose.connect(process.env.MONGO_URI)
         console.log('connected to DB')
@@ -8,3 +8,4 @@ async function connectToDb(){
         console.log(error)
     }
 }
+
