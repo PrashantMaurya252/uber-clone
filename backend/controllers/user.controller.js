@@ -10,7 +10,7 @@ export const registerUser = async(req,res,next)=>{
     }
 
     const {fullname,email,password} = req.body
-    const isEmailExist = await userModel.find({email:email})
+    const isEmailExist = await userModel.findOne({email})
 
     if(isEmailExist){
         return res.status(400).json({status:false,message:"this email user already exist please login"})
